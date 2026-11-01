@@ -78,7 +78,7 @@ function App() {
       return;
     }
 
-    const socket = io("http://localhost:4000", {autoConnect: false, reconnection: false});
+    const socket = io("https://websocket-i9hd.onrender.com", {autoConnect: false, reconnection: false});
     socketHolder.current = socket.connect();
   },[]);
 
