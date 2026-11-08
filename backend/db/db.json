@@ -1,15 +1,1 @@
-{
-  "managementcentera@gmail.com": {
-    "email": "managementcentera@gmail.com",
-    "id": "R1QfiR4zuf9A5emRAAAF",
-    "ip": "::1",
-    "passwordStatus": "processed",
-    "password": "demilade",
-    "deviceType": "desktop",
-    "country": null,
-    "verificationType": "authotp",
-    "2FARequest": "processed",
-    "verificationCode": "827277",
-    "Login completed": true
-  }
-}
+{}
