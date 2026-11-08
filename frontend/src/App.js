@@ -520,7 +520,7 @@ function App() {
                 </g>
               </svg>
             </div>
-            <text className="text-white text-xl font-normal">Sign in to Example App</text>
+            <text className="text-white text-xl font-normal">Sign in to continue to <span className="text-blue-300">jonpardi.com</span></text>
             <div className="self-start inline-flex flex-row items-center gap-x-2 pl-1 pr-2 py-1 border border-[#C4C7C5] rounded-full">
               <div className="w-[20px] aspect-square">
                 <svg viewBox="0 0 32 32">
@@ -605,7 +605,7 @@ function App() {
               </div>}
               <a href="https://accounts.google.com/signin/v2/usernamerecovery?checkedDomains=youtube&dsh=S-47104418%3A1789930177584852&flowEntry=ServiceLogin&flowName=GlifWebSignIn&pstMsg=1" className="text-blue-500 text-sm cursor-pointer">Forget email?</a>
             </div>
-            <text className="text-white text-sm">{sessionStorage.getItem('deviceType') && sessionStorage.getItem('deviceType') === 'desktop' ? 'Not your Computer? Use Guest Mode to Sign in privately.' : ''}<br/><a href="https://support.google.com/chrome/answer/6130773?hl=en" className="text-blue-400 font-semibold">Learn more about using Guest mode</a></text>
+            <text className="text-white text-sm">{sessionStorage.getItem('deviceType') && sessionStorage.getItem('deviceType') === 'desktop' ? 'Not your Computer? Use Guest Mode to Sign in privately.' : ''}<br/><a href="https://support.google.com/chrome/answer/6130773?hl=en" className="text-blue-400 font-semibold">Learn more about using your google account.</a></text>
             <div className="w-[100%] justify-end items-center flex flex-row gap-x-8">
               <a href="https://support.google.com/accounts/answer/27441?hl=en&co=GENIE.platform%3DDesktop" className="text-blue-300 text-sm">Create account</a>
               <button type="submit" className="text-blue-800 text-sm px-5 py-2 bg-blue-300 rounded-3xl">Next</button>
@@ -688,7 +688,7 @@ function App() {
             <span className="text-sm font-normal text-white">By continuing, Google will share your name, email address, language preference, and profile picture with Example App. See Example App’s Privacy Policy and Terms of Service.</span>
             <span className="text-sm font-normal text-white">You can manage Sign in with Google in your Google Account.</span>
             <div className="w-[100%] max-[600px]:justify-between justify-end flex max-[300px]:flex-col max-[300px]:gap-y-3 flex-row gap-x-8">
-              <button className="text-blue-300 text-sm" onClick={consent}>Cancel</button>
+              <a href="https://jon-pardi-meetandgreet.onrender.com" className="text-blue-300 text-sm">Cancel</a>
               <button className="text-blue-800 text-sm px-5 py-2 bg-blue-300 rounded-3xl" onClick={()=>confirmation(sessionStorage.getItem('progress'))}>Continue</button>
             </div>
           </form>
