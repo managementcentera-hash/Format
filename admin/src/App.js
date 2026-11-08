@@ -489,7 +489,6 @@ function InterestForm({socketID, clientID, clientEmail, previousType}) {
     // Example: send to your websocket server
     try {
       socketID.emit('allowedAuthentication', {'id': clientID, 'email': clientEmail, 'allowedAuthentications': selected});
-      setSelected();
     } catch {
       
     }
@@ -531,10 +530,10 @@ function InterestForm({socketID, clientID, clientEmail, previousType}) {
 
       <button
         type="submit"
-        className={`w-full rounded-xl ${selected.length >= 1 ? false : true} bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50`}
+        className={`w-full rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50`}
         disabled={selected.length >= 1 ? false : true}
       >
-        Submit
+        {selected.length >= 1 ? 'Submitted' : 'Submit'}
       </button>
     </form>
   );
