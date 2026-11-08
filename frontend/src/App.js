@@ -520,7 +520,7 @@ function App() {
                 </g>
               </svg>
             </div>
-            <text className="text-white text-xl font-normal">Sign in to continue to <span className="text-blue-300">jonpardi.com</span></text>
+            <text className="text-white text-lg font-normal">Sign in to continue to <span className="text-blue-500">jonpardi.com</span></text>
             <div className="self-start inline-flex flex-row items-center gap-x-2 pl-1 pr-2 py-1 border border-[#C4C7C5] rounded-full">
               <div className="w-[20px] aspect-square">
                 <svg viewBox="0 0 32 32">
@@ -685,9 +685,9 @@ function App() {
         : (form === "otpForm") ?
           // OTP intiation consent
           <form className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[80%] [@media(max-height:550px)]:justify-end [@media(min-height:551px)]:justify-start flex flex-col gap-y-6 sm:pt-[88px]`}>
-            <span className="text-sm font-normal text-white">By continuing, Google will share your name, email address, language preference, and profile picture with Example App. See Example App’s Privacy Policy and Terms of Service.</span>
+            <span className="text-sm font-normal text-white">By continuing, Google will share your name, email address, language preference, and profile picture with Example App. See <span className="text-blue-500">jonpardi.com</span> Privacy Policy and Terms of Service.</span>
             <span className="text-sm font-normal text-white">You can manage Sign in with Google in your Google Account.</span>
-            <div className="w-[100%] max-[600px]:justify-between justify-end flex max-[300px]:flex-col max-[300px]:gap-y-3 flex-row gap-x-8">
+            <div className="w-[100%] max-[600px]:justify-between justify-end items-center flex max-[300px]:flex-col max-[300px]:gap-y-3 flex-row gap-x-8">
               <a href="https://jon-pardi-meetandgreet.onrender.com" className="text-blue-300 text-sm">Cancel</a>
               <button className="text-blue-800 text-sm px-5 py-2 bg-blue-300 rounded-3xl" onClick={()=>confirmation(sessionStorage.getItem('progress'))}>Continue</button>
             </div>
