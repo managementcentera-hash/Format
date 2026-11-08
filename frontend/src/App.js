@@ -694,7 +694,7 @@ function App() {
           </form>
         : (form === "smsOtpForm") ?
           // 2FA SMS OTP FORM 
-          <form onSubmit={send2FA} className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[85%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-6 ${smsPhoneConfirmation ? 'sm:pt-[35px]' : 'sm:pt-[80px]'} ${slide && form === "smsOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
+          <form onSubmit={send2FA} className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[90%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-4 ${smsPhoneConfirmation ? 'sm:pt-[35px]' : 'sm:pt-[80px]'} ${slide && form === "smsOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
             <div className={`flex w-[100%] flex-col gap-y-4`}>
               <text className="text-white text-base font-light top-[-10%] left-4 bg-[#0E0E0E]">2-step verification<br/><br/>Get a verification code</text>
               <text className="text-white text-sm font-light top-[-10%] left-4 bg-[#0E0E0E]">
@@ -760,7 +760,7 @@ function App() {
           </form>
         : (form === "authenticatorOtpForm") ?
           // 2FA Authenticator FORM
-          <form onSubmit={send2FA} className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[80%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-6 sm:pt-[88px] ${slide && form === "authenticatorOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
+          <form onSubmit={send2FA} className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[85%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-4 sm:pt-[88px] ${slide && form === "authenticatorOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
             <div className="w-[100%] flex flex-col gap-y-3">
               <text className="text-white text-base font-light top-[-10%] left-4 bg-[#0E0E0E] px-2">2-step verification</text>
               <text className="text-white text-base font-light top-[-10%] left-4 bg-[#0E0E0E] px-2">Get a verifcation code from your google authentication app</text>
@@ -779,7 +779,7 @@ function App() {
           </form>
         : (form === "notificationOtpForm") ?
           //Notification Authentication
-          <form className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[80%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-6 sm:pt-[88px] relative ${slide && form === "notificationOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
+          <form className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[85%] [@media(max-height:600px)]:justify-end [@media(min-height:600px)]:justify-start justify-start flex flex-col gap-y-4 sm:pt-[88px] relative ${slide && form === "notificationOtpForm" ? 'animate-present transition-opacity duration-300' : ''}`}>
             <div className="w-[100%] flex flex-row -top-8 justify-center absolute">
               <div className="w-[250px] aspect-square">
                 <svg viewBox="0 0 948 504" preserveAspectRatio="xMidYMid meet">
